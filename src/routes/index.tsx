@@ -17,8 +17,10 @@ import {
   BarChart3,
   Building2,
   Mail,
+  Send,
 } from "lucide-react";
 import { useState } from "react";
+import { submitEmailSignup } from "@/lib/email-signup.functions";
 import {
   Accordion,
   AccordionContent,
@@ -571,6 +573,72 @@ function ForBusinesses() {
   );
 }
 
+function EmailSignup() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email.trim()) return;
+    setStatus("loading");
+    try {
+      const result = await submitEmailSignup({ data: { email } });
+      setStatus("success");
+      setMessage(result.message);
+      setEmail("");
+    } catch {
+      setStatus("error");
+      setMessage("Something went wrong. Please try again.");
+    }
+  }
+
+  return (
+    <section className="bg-background py-24 md:py-32">
+      <div className="container-page">
+        <div className="mx-auto max-w-xl text-center">
+          <span className="inline-flex items-center justify-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+            <Send className="h-3.5 w-3.5" />
+            Newsletter
+          </span>
+          <h2 className="mt-5 text-3xl md:text-5xl">Stay Updated on Our Impact</h2>
+          <p className="mt-4 text-muted-foreground md:text-lg">
+            Get monthly impact reports delivered to your inbox. No spam, ever.
+          </p>
+
+          <form onSubmit={handleSubmit} className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
+            <input
+              type="email"
+              required
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={status === "loading" || status === "success"}
+              className="h-12 w-full rounded-full border border-border bg-card px-5 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:opacity-60 sm:w-80"
+            />
+            <button
+              type="submit"
+              disabled={status === "loading" || status === "success"}
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground shadow transition hover:bg-primary/90 disabled:opacity-60"
+            >
+              {status === "loading" ? "Subscribing…" : status === "success" ? "Subscribed" : "Subscribe"}
+              <Send className="h-4 w-4" />
+            </button>
+          </form>
+
+          {message && (
+            <p
+              className={`mt-4 text-sm ${status === "success" ? "text-primary" : "text-destructive"}`}
+            >
+              {message}
+            </p>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer className="bg-charcoal text-white/70">
@@ -608,6 +676,7 @@ function Landing() {
       <FinalCTA />
       <FinalTrustBanner />
       <ForBusinesses />
+      <EmailSignup />
       <Footer />
     </main>
   );
