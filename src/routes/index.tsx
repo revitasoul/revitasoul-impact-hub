@@ -543,6 +543,61 @@ function FinalTrustBanner() {
   );
 }
 
+function ForBusinesses() {
+  const tiers = [
+    { price: "$250", families: "~6", label: "Monthly Partnership" },
+    { price: "$500", families: "~15", label: "Monthly Partnership" },
+    { price: "$1,000", families: "~30", label: "Monthly Partnership" },
+  ];
+  return (
+    <section className="bg-muted/40 py-24 md:py-32">
+      <div className="container-page">
+        <div className="max-w-2xl mx-auto text-center">
+          <span className="eyebrow">For Businesses</span>
+          <h2 className="mt-4 text-3xl md:text-5xl">
+            Turn Your Brand Into a Force for Good.
+          </h2>
+          <p className="mt-5 text-muted-foreground md:text-lg">
+            RevitaSoul corporate partnerships let your company feed DFW families every month —
+            we handle everything, you get the impact report and the recognition.
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {tiers.map((t) => (
+            <div
+              key={t.price}
+              className="relative rounded-3xl border border-border bg-card p-8 text-center transition hover:border-primary/40 hover:shadow-[0_20px_60px_-30px_rgb(0_0_0/0.2)]"
+            >
+              <span className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary mx-auto">
+                <Building2 className="h-5 w-5" />
+              </span>
+              <div className="mt-6">
+                <span className="text-4xl font-display font-medium text-foreground">{t.price}</span>
+                <span className="text-muted-foreground text-sm">/month</span>
+              </div>
+              <p className="mt-3 text-sm text-muted-foreground">{t.label}</p>
+              <div className="mt-6 rounded-2xl bg-muted/50 px-5 py-4">
+                <p className="text-2xl font-display font-medium text-foreground">{t.families}</p>
+                <p className="mt-1 text-sm text-muted-foreground">families supported</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <a
+            href="mailto:admin@revitasoul.com"
+            className="btn-primary inline-flex"
+          >
+            Enquire About a Partnership <Mail className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer className="bg-charcoal text-white/70">
