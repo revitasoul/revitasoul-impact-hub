@@ -558,7 +558,7 @@ function ForBusinesses() {
             Turn Your Brand Into a Force for Good.
           </h2>
           <p className="mt-5 text-muted-foreground md:text-lg">
-            RevitaSoul corporate partnerships let your company feed DFW families every month —
+            RevitaSoul corporate partnerships let your company feed families every month —
             we handle everything, you get the impact report and the recognition.
           </p>
         </div>
