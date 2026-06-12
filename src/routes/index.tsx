@@ -182,7 +182,10 @@ function CommunityImpact() {
         <div className="mt-16 max-w-3xl">
           <h3 className="text-2xl md:text-3xl font-display">Impact Reports</h3>
           <p className="mt-4 text-base text-muted-foreground md:text-lg leading-relaxed">
-            RevitaSoul shares periodic updates documenting food support efforts and community impact.
+            RevitaSoul publishes periodic updates documenting food support efforts and community impact.
+          </p>
+          <p className="mt-4 text-base text-muted-foreground md:text-lg leading-relaxed">
+            First report will be published following the next food support distribution.
           </p>
           <div className="mt-10">
             <p className="text-sm font-medium text-muted-foreground mb-4">Impact Report Archive</p>
