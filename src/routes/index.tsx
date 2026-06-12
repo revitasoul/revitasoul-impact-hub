@@ -61,7 +61,7 @@ function Nav() {
           <a href="#transparency" className="hover:text-white">Transparency</a>
           <a href="#faq" className="hover:text-white">FAQ</a>
         </nav>
-        <a href="#join" className="hidden md:inline-flex btn-primary text-sm" style={{ padding: "0.6rem 1.1rem" }}>
+        <a href="https://revitasoul.com/products/the-essentialist-25-monthly?variant=52416381845811" className="hidden md:inline-flex btn-primary text-sm" style={{ padding: "0.6rem 1.1rem" }}>
           Become a Member
         </a>
         <button
@@ -79,7 +79,7 @@ function Nav() {
             <a href="#impact" onClick={() => setOpen(false)}>Impact</a>
             <a href="#transparency" onClick={() => setOpen(false)}>Transparency</a>
             <a href="#faq" onClick={() => setOpen(false)}>FAQ</a>
-            <a href="#join" onClick={() => setOpen(false)} className="btn-primary mt-2">
+            <a href="https://revitasoul.com/products/the-essentialist-25-monthly?variant=52416381845811" onClick={() => setOpen(false)} className="btn-primary mt-2">
               Become a Member
             </a>
           </div>
@@ -122,7 +122,7 @@ function Hero() {
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a href="#join" className="btn-primary">
+            <a href="https://revitasoul.com/products/the-essentialist-25-monthly?variant=52416381845811" className="btn-primary">
               Become a Member <ArrowRight className="h-4 w-4" />
             </a>
             <a href="#how" className="btn-ghost-light">
@@ -383,7 +383,7 @@ function FinalCTA() {
               food support for families who need it.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a href="#join" className="btn-primary">
+              <a href="https://revitasoul.com/products/the-essentialist-25-monthly?variant=52416381845811" className="btn-primary">
                 Become a Member <ArrowRight className="h-4 w-4" />
               </a>
               <a href="#how" className="btn-ghost-light">
