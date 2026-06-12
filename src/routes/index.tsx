@@ -634,6 +634,7 @@ function Landing() {
       <FAQ />
       <FinalCTA />
       <FinalTrustBanner />
+      <ForBusinesses />
       <Footer />
     </main>
   );
