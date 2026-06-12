@@ -147,7 +147,7 @@ function Hero() {
         <div className="container-page grid grid-cols-2 gap-6 py-8 md:grid-cols-4 md:gap-8">
           {[
             { icon: LineChart, label: "Monthly Impact Updates" },
-            { icon: Users, label: "Growing Community" },
+            { icon: Users, label: "Community Driven" },
             { icon: Repeat, label: "Cancel Anytime" },
             { icon: HandHeart, label: "Consistent Food Support" },
           ].map((s) => (
@@ -182,7 +182,10 @@ function CommunityImpact() {
         <div className="mt-16 max-w-3xl">
           <h3 className="text-2xl md:text-3xl font-display">Impact Reports</h3>
           <p className="mt-4 text-base text-muted-foreground md:text-lg leading-relaxed">
-            RevitaSoul shares periodic updates documenting food support efforts and community impact.
+            RevitaSoul publishes periodic updates documenting food support efforts and community impact.
+          </p>
+          <p className="mt-4 text-base text-muted-foreground md:text-lg leading-relaxed">
+            First report will be published following the next food support distribution.
           </p>
           <div className="mt-10">
             <p className="text-sm font-medium text-muted-foreground mb-4">Impact Report Archive</p>
