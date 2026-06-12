@@ -13,7 +13,7 @@ import {
   Leaf,
   HandHeart,
   Quote,
-  TrendingUp,
+  
   ClipboardList,
   BarChart3,
   Building2,
@@ -26,7 +26,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Progress } from "@/components/ui/progress";
+
 import heroImg from "@/assets/hero-family.jpg";
 import groceriesImg from "@/assets/groceries.jpg";
 import communityImg from "@/assets/community.jpg";
