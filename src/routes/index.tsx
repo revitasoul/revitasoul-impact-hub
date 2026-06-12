@@ -583,7 +583,7 @@ function EmailSignup() {
     if (!email.trim()) return;
     setStatus("loading");
     try {
-      const result = await submitEmailSignup({ email });
+      const result = await submitEmailSignup({ data: { email } });
       setStatus("success");
       setMessage(result.message);
       setEmail("");
