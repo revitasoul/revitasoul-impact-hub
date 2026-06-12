@@ -16,6 +16,8 @@ import {
   TrendingUp,
   ClipboardList,
   BarChart3,
+  Building2,
+  Mail,
 } from "lucide-react";
 import { useState } from "react";
 import {
