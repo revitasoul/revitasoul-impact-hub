@@ -17,8 +17,10 @@ import {
   BarChart3,
   Building2,
   Mail,
+  Send,
 } from "lucide-react";
 import { useState } from "react";
+import { submitEmailSignup } from "@/lib/email-signup.functions";
 import {
   Accordion,
   AccordionContent,
