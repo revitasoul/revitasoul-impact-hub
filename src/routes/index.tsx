@@ -147,7 +147,7 @@ function Hero() {
         <div className="container-page grid grid-cols-2 gap-6 py-8 md:grid-cols-4 md:gap-8">
           {[
             { icon: LineChart, label: "Monthly Impact Updates" },
-            { icon: Users, label: "Growing Community" },
+            { icon: Users, label: "Community Driven" },
             { icon: Repeat, label: "Cancel Anytime" },
             { icon: HandHeart, label: "Consistent Food Support" },
           ].map((s) => (
