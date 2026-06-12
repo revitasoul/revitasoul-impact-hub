@@ -12,6 +12,10 @@ import {
   CheckCircle2,
   Leaf,
   HandHeart,
+  Quote,
+  TrendingUp,
+  ClipboardList,
+  BarChart3,
 } from "lucide-react";
 import { useState } from "react";
 import {
@@ -20,6 +24,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Progress } from "@/components/ui/progress";
 import heroImg from "@/assets/hero-family.jpg";
 import groceriesImg from "@/assets/groceries.jpg";
 import communityImg from "@/assets/community.jpg";
@@ -44,6 +49,9 @@ export const Route = createFileRoute("/")({
   component: Landing,
 });
 
+const SHOPIFY_URL =
+  "https://revitasoul.com/products/the-essentialist-25-monthly?variant=52416381845811";
+
 function Nav() {
   const [open, setOpen] = useState(false);
   return (
@@ -61,7 +69,11 @@ function Nav() {
           <a href="#transparency" className="hover:text-white">Transparency</a>
           <a href="#faq" className="hover:text-white">FAQ</a>
         </nav>
-        <a href="https://revitasoul.com/products/the-essentialist-25-monthly?variant=52416381845811" className="hidden md:inline-flex btn-primary text-sm" style={{ padding: "0.6rem 1.1rem" }}>
+        <a
+          href={SHOPIFY_URL}
+          className="hidden md:inline-flex btn-primary text-sm"
+          style={{ padding: "0.6rem 1.1rem" }}
+        >
           Become a Member
         </a>
         <button
@@ -79,7 +91,7 @@ function Nav() {
             <a href="#impact" onClick={() => setOpen(false)}>Impact</a>
             <a href="#transparency" onClick={() => setOpen(false)}>Transparency</a>
             <a href="#faq" onClick={() => setOpen(false)}>FAQ</a>
-            <a href="https://revitasoul.com/products/the-essentialist-25-monthly?variant=52416381845811" onClick={() => setOpen(false)} className="btn-primary mt-2">
+            <a href={SHOPIFY_URL} onClick={() => setOpen(false)} className="btn-primary mt-2">
               Become a Member
             </a>
           </div>
@@ -110,19 +122,15 @@ function Hero() {
             A social impact membership
           </span>
           <h1 className="mt-6 text-4xl leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl">
-            Help feed families <span className="text-primary">every month</span>.
+            One Membership. <span className="text-primary">Consistent Impact.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/80 md:text-xl">
-            Join a community helping sponsor food support for individuals and families
-            facing food insecurity.
-          </p>
-          <p className="mt-4 max-w-xl text-base text-white/60">
-            Small actions become meaningful impact when done consistently. RevitaSoul makes
-            it simple to help provide ongoing food support through a monthly membership.
+            Join a community helping provide food support for individuals and families
+            facing food insecurity through consistent monthly action.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a href="https://revitasoul.com/products/the-essentialist-25-monthly?variant=52416381845811" className="btn-primary">
+            <a href={SHOPIFY_URL} className="btn-primary">
               Become a Member <ArrowRight className="h-4 w-4" />
             </a>
             <a href="#how" className="btn-ghost-light">
@@ -147,6 +155,71 @@ function Hero() {
               <span className="text-sm font-medium">{s.label}</span>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CommunityGoal() {
+  return (
+    <section className="bg-muted/40 py-24 md:py-32">
+      <div className="container-page">
+        <div className="max-w-2xl">
+          <span className="eyebrow">Community Goal</span>
+          <h2 className="mt-4 text-3xl md:text-5xl">
+            Tracking our progress toward providing ongoing food support.
+          </h2>
+        </div>
+
+        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+          <div className="rounded-3xl border border-border bg-card p-8">
+            <div className="flex items-center gap-3">
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
+                <Users className="h-5 w-5" />
+              </span>
+              <span className="text-sm font-medium text-muted-foreground">Current Progress</span>
+            </div>
+            <div className="mt-6">
+              <span className="text-4xl font-display font-medium text-foreground">127</span>
+              <p className="mt-1 text-sm text-muted-foreground">Members Supported</p>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-border bg-card p-8">
+            <div className="flex items-center gap-3">
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
+                <Package className="h-5 w-5" />
+              </span>
+              <span className="text-sm font-medium text-muted-foreground">Food Coordinated</span>
+            </div>
+            <div className="mt-6">
+              <span className="text-4xl font-display font-medium text-foreground">350</span>
+              <span className="ml-1 text-lg text-muted-foreground">lbs</span>
+              <p className="mt-1 text-sm text-muted-foreground">Toward our community goal</p>
+            </div>
+            <div className="mt-6">
+              <div className="flex items-center justify-between text-sm mb-2">
+                <span className="text-muted-foreground">Goal: 2,000 lbs</span>
+                <span className="font-medium text-foreground">17.5%</span>
+              </div>
+              <Progress value={17.5} className="h-2.5" />
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-border bg-card p-8">
+            <div className="flex items-center gap-3">
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
+                <TrendingUp className="h-5 w-5" />
+              </span>
+              <span className="text-sm font-medium text-muted-foreground">Status</span>
+            </div>
+            <div className="mt-6">
+              <p className="text-base text-muted-foreground leading-relaxed">
+                Progress will be updated regularly as our community grows.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -215,7 +288,7 @@ function WhyJoin() {
 
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {cards.map((c) => (
-            <div key={c.title} className="rounded-3xl bg-background p-8 ring-1 ring-border">
+            <div key={c.title} className="rounded-3xl bg-card p-8 ring-1 ring-border">
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-primary text-primary-foreground">
                 <c.icon className="h-5 w-5" />
               </span>
@@ -235,6 +308,11 @@ function Impact() {
     { icon: Truck, label: "Bulk Food Support" },
     { icon: Users, label: "Community Distribution Efforts" },
     { icon: LineChart, label: "Ongoing Impact Updates" },
+  ];
+  const placeholders = [
+    { icon: Package, title: "Food Purchased" },
+    { icon: ClipboardList, title: "Distribution Updates" },
+    { icon: BarChart3, title: "Community Growth" },
   ];
   return (
     <section id="impact" className="bg-background py-24 md:py-32">
@@ -262,12 +340,25 @@ function Impact() {
             <div className="mt-10 rounded-2xl border border-dashed border-border bg-muted/50 p-5 text-sm text-muted-foreground">
               <div className="flex items-center gap-2 font-medium text-foreground">
                 <Sparkles className="h-4 w-4 text-primary" />
-                Impact reports — coming soon
+                Impact reports
               </div>
               <p className="mt-1.5">
-                Members will receive transparent monthly summaries detailing community
-                food support efforts.
+                Our first impact report will be published following our initial food support distribution.
               </p>
+            </div>
+
+            <div className="mt-6 grid gap-4 sm:grid-cols-3">
+              {placeholders.map((p) => (
+                <div key={p.title} className="rounded-2xl border border-border bg-card px-5 py-6 text-center">
+                  <span className="mx-auto grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
+                    <p.icon className="h-4 w-4" />
+                  </span>
+                  <h4 className="mt-3 text-sm font-medium text-foreground">{p.title}</h4>
+                  <span className="mt-1 inline-block rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                    Coming Soon
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -327,6 +418,40 @@ function Transparency() {
               </p>
             </div>
           </div>
+          <p className="text-sm text-white/60">
+            We believe trust is earned through transparency, consistency, and documented impact.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FounderStory() {
+  return (
+    <section className="bg-muted/40 py-24 md:py-32">
+      <div className="container-page">
+        <div className="max-w-3xl mx-auto">
+          <span className="eyebrow">Founder</span>
+          <h2 className="mt-4 text-3xl md:text-5xl">Why I Started RevitaSoul</h2>
+          <div className="mt-10 relative rounded-3xl border border-border bg-card p-8 md:p-12">
+            <Quote className="absolute top-6 left-6 h-8 w-8 text-primary/20" />
+            <blockquote className="relative text-lg md:text-xl leading-relaxed text-foreground">
+              Food insecurity affects millions of people, yet support is often inconsistent.
+              I created RevitaSoul to build a simple membership model that helps create
+              ongoing food support through community-driven efforts. My goal is to make
+              consistent impact simple, transparent, and sustainable.
+            </blockquote>
+            <div className="mt-8 flex items-center gap-4">
+              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-semibold">
+                U
+              </div>
+              <div>
+                <p className="font-medium text-foreground">Umair</p>
+                <p className="text-sm text-muted-foreground">Founder</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -370,7 +495,7 @@ function FAQ() {
 
 function FinalCTA() {
   return (
-    <section id="join" className="bg-muted/40 py-24 md:py-32">
+    <section className="bg-muted/40 py-24 md:py-32">
       <div className="container-page">
         <div className="relative overflow-hidden rounded-[2rem] bg-charcoal px-8 py-16 text-white md:px-16 md:py-24">
           <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
@@ -383,7 +508,7 @@ function FinalCTA() {
               food support for families who need it.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a href="https://revitasoul.com/products/the-essentialist-25-monthly?variant=52416381845811" className="btn-primary">
+              <a href={SHOPIFY_URL} className="btn-primary">
                 Become a Member <ArrowRight className="h-4 w-4" />
               </a>
               <a href="#how" className="btn-ghost-light">
@@ -391,6 +516,25 @@ function FinalCTA() {
               </a>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FinalTrustBanner() {
+  return (
+    <section className="bg-charcoal py-16 text-white md:py-20">
+      <div className="container-page text-center max-w-3xl">
+        <h2 className="text-3xl md:text-5xl">Building Long-Term Impact</h2>
+        <p className="mt-5 text-white/75 md:text-lg">
+          RevitaSoul is designed to create sustainable food support through a growing
+          community of members committed to consistent action.
+        </p>
+        <div className="mt-9">
+          <a href={SHOPIFY_URL} className="btn-primary">
+            Become a Member <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </section>
@@ -424,12 +568,15 @@ function Landing() {
     <main className="min-h-screen bg-background text-foreground">
       <Nav />
       <Hero />
+      <CommunityGoal />
       <HowItWorks />
       <WhyJoin />
       <Impact />
       <Transparency />
+      <FounderStory />
       <FAQ />
       <FinalCTA />
+      <FinalTrustBanner />
       <Footer />
     </main>
   );
