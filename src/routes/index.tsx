@@ -13,7 +13,6 @@ import {
   Leaf,
   HandHeart,
   Quote,
-  TrendingUp,
   ClipboardList,
   BarChart3,
   Building2,
@@ -26,7 +25,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Progress } from "@/components/ui/progress";
+
 import heroImg from "@/assets/hero-family.jpg";
 import groceriesImg from "@/assets/groceries.jpg";
 import communityImg from "@/assets/community.jpg";
@@ -163,63 +162,37 @@ function Hero() {
   );
 }
 
-function CommunityGoal() {
+function CommunityImpact() {
   return (
     <section className="bg-muted/40 py-24 md:py-32">
       <div className="container-page">
         <div className="max-w-2xl">
-          <span className="eyebrow">Community Goal</span>
-          <h2 className="mt-4 text-3xl md:text-5xl">
-            Tracking our progress toward providing ongoing food support.
-          </h2>
+          <span className="eyebrow">Community Impact</span>
+          <h2 className="mt-4 text-3xl md:text-5xl">Community Impact</h2>
+          <p className="mt-5 text-base text-muted-foreground md:text-lg leading-relaxed">
+            RevitaSoul is committed to documenting and sharing the impact created through member support.
+          </p>
+          <p className="mt-4 text-base text-muted-foreground md:text-lg leading-relaxed">
+            Members receive periodic updates highlighting food support efforts, distributions, and community impact.
+          </p>
         </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          <div className="rounded-3xl border border-border bg-card p-8">
-            <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
-                <Users className="h-5 w-5" />
-              </span>
-              <span className="text-sm font-medium text-muted-foreground">Current Progress</span>
-            </div>
-            <div className="mt-6">
-              <span className="text-4xl font-display font-medium text-foreground">127</span>
-              <p className="mt-1 text-sm text-muted-foreground">Members Supported</p>
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-border bg-card p-8">
-            <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
-                <Package className="h-5 w-5" />
-              </span>
-              <span className="text-sm font-medium text-muted-foreground">Food Coordinated</span>
-            </div>
-            <div className="mt-6">
-              <span className="text-4xl font-display font-medium text-foreground">350</span>
-              <span className="ml-1 text-lg text-muted-foreground">lbs</span>
-              <p className="mt-1 text-sm text-muted-foreground">Toward our community goal</p>
-            </div>
-            <div className="mt-6">
-              <div className="flex items-center justify-between text-sm mb-2">
-                <span className="text-muted-foreground">Goal: 2,000 lbs</span>
-                <span className="font-medium text-foreground">17.5%</span>
+        <div className="mt-16 max-w-3xl">
+          <h3 className="text-2xl md:text-3xl font-display">Impact Reports</h3>
+          <p className="mt-4 text-base text-muted-foreground md:text-lg leading-relaxed">
+            RevitaSoul shares periodic updates documenting food support efforts and community impact.
+          </p>
+          <div className="mt-10">
+            <p className="text-sm font-medium text-muted-foreground mb-4">Impact Report Archive</p>
+            <div className="space-y-3">
+              <div className="flex items-center justify-between rounded-2xl border border-border bg-card px-6 py-4">
+                <span className="text-sm font-medium text-foreground">August 2026</span>
+                <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Coming Soon</span>
               </div>
-              <Progress value={17.5} className="h-2.5" />
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-border bg-card p-8">
-            <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
-                <TrendingUp className="h-5 w-5" />
-              </span>
-              <span className="text-sm font-medium text-muted-foreground">Status</span>
-            </div>
-            <div className="mt-6">
-              <p className="text-base text-muted-foreground leading-relaxed">
-                Progress will be updated regularly as our community grows.
-              </p>
+              <div className="flex items-center justify-between rounded-2xl border border-border bg-card px-6 py-4">
+                <span className="text-sm font-medium text-foreground">September 2026</span>
+                <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Coming Soon</span>
+              </div>
             </div>
           </div>
         </div>
@@ -625,7 +598,7 @@ function Landing() {
     <main className="min-h-screen bg-background text-foreground">
       <Nav />
       <Hero />
-      <CommunityGoal />
+      <CommunityImpact />
       <HowItWorks />
       <WhyJoin />
       <Impact />
