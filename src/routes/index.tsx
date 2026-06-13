@@ -187,19 +187,6 @@ function CommunityImpact() {
           <p className="mt-4 text-base text-muted-foreground md:text-lg leading-relaxed">
             First report will be published following the next food support distribution.
           </p>
-          <div className="mt-10">
-            <p className="text-sm font-medium text-muted-foreground mb-4">Impact Report Archive</p>
-            <div className="space-y-3">
-              <div className="flex items-center justify-between rounded-2xl border border-border bg-card px-6 py-4">
-                <span className="text-sm font-medium text-foreground">August 2026</span>
-                <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Coming Soon</span>
-              </div>
-              <div className="flex items-center justify-between rounded-2xl border border-border bg-card px-6 py-4">
-                <span className="text-sm font-medium text-foreground">September 2026</span>
-                <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Coming Soon</span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
