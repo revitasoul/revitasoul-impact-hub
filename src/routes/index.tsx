@@ -409,15 +409,6 @@ function FounderStory() {
               ongoing food support through community-driven efforts. My goal is to make
               consistent impact simple, transparent, and sustainable.
             </blockquote>
-            <div className="mt-8 flex items-center gap-4">
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-semibold">
-                U
-              </div>
-              <div>
-                <p className="font-medium text-foreground">Umair</p>
-                <p className="text-sm text-muted-foreground">Founder</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
